@@ -21,7 +21,7 @@ public class StockPriceServiceImpl implements IStockPriceService {
 			throw new StockNotFoundException("Company Not Available With " + companyName + " Name");
 		}
 		
-		return null;
+		return stockPrice.getCompanyPrice();
 	}
 
 }
