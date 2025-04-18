@@ -1,6 +1,5 @@
 package com.pavan.controller;
 
-import java.net.http.HttpRequest;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.pavan.service.StockService;
+
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 public class StockUiController {
@@ -22,9 +23,15 @@ public class StockUiController {
 		return "index";
 	}
 	
-	public String getTotalCost(HttpRequest request, Map<String, Object> model)
+	@GetMapping(value="/getTotalCost")
+	public String getTotalCost(HttpServletRequest request, Map<String, Object> model)
 	{
+		String companyName = request.getParameter("companyName");
+		String quantity = request.getParameter("quantity");
 		
+		String stockPrice = service.getTotalStockPrice(companyName,Integer.parseInt(quantity));
+		model.put("msg", stockPrice);
+		return "index";
 	}
 
 }
