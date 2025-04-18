@@ -19,10 +19,6 @@
 						<input type='text' name='companyName'/>
 					</td>
 				</tr>
-				
-				
-				
-				
 				<tr>
 					<td>Quantity</td>
 					<td>
