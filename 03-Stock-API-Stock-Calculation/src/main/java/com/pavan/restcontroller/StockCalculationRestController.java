@@ -20,9 +20,14 @@ public class StockCalculationRestController {
 	@GetMapping(value="/calculate/{companyName}/{quantity}")
 	public ResponseEntity<?> caluculate(@PathVariable String companyName, @PathVariable Integer quantity)
 	{
-		ResponseEntity<?> price;
+		ResponseEntity<?> response;
 		Double stockPrice;
-		price = client.getStockPrice(companyName);
+		response = client.getStockPrice(companyName);
+		int statusCode = response.getStatusCode().value();
+		if(statusCode == 200)
+		{
+			
+		}
 		
 		return null;
 	}

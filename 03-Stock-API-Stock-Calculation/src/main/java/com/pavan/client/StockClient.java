@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface StockClient {
 
 	@GetMapping(value="/price/stockprice/{company}")
-	public ResponseEntity<String> getStockPrice(@PathVariable String company);
+	public ResponseEntity<Double> getStockPrice(@PathVariable String company);
 	
 	
 }
