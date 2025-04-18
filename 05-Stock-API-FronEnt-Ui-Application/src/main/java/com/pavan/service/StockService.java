@@ -12,8 +12,8 @@ public class StockService {
 	{
 		final String REST_ENT_POINT = "http://nobody:3333/api/calc/calc/calculate/{companyName}/{";
 		WebClient client = WebClient.create();
-		client.get().uri(REST_ENT_POINT,compnayName,quantity)
-		return null;
+		String result = client.get().uri(REST_ENT_POINT,compnayName,quantity).retrieve().bodyToMono(String.class).block();
+		return result;
 	}
 	
 	
