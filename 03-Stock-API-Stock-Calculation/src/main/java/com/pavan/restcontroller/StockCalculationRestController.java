@@ -22,6 +22,7 @@ public class StockCalculationRestController {
 		ResponseEntity<?> response;
 		Double totalStockPrice;
 		try {
+
 			response = client.getStockPrice(companyName);
 			int statusCode = response.getStatusCode().value();
 			if (statusCode == 200) {
