@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pavan.client.StockClient;
 
 @RestController
-@RequestMapping(value = "/cal")
+@RequestMapping(value = "/calc")
 public class StockCalculationRestController {
 
 	@Autowired
@@ -26,6 +26,7 @@ public class StockCalculationRestController {
 			response = client.getStockPrice(companyName);
 			int statusCode = response.getStatusCode().value();
 			if (statusCode == 200) {
+				System.out.println("StockCalculationRestController.caluculate()");
 				Double stockPrice = (Double) response.getBody();
 				totalStockPrice = quantity * stockPrice;
 
