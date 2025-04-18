@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pavan.client.StockClient;
 
 @RestController
-@RequestMapping(value = "/calc")
+@RequestMapping(value = "/cal")
 public class StockCalculationRestController {
 
 	@Autowired
