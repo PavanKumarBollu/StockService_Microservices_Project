@@ -15,10 +15,14 @@ public class StockCalculationRestController {
 	
 	@Autowired
 	private StockClient client;
+	
 
 	@GetMapping(value="/calculate/{companyName}/{quantity}")
 	public ResponseEntity<?> caluculate(@PathVariable String companyName, @PathVariable Integer quantity)
 	{
+		ResponseEntity<?> price;
+		Double stockPrice;
+		price = client.getStockPrice(companyName);
 		
 		return null;
 	}
