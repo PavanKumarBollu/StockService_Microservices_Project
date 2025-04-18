@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class StockCalculationRestController {
 
 	@GetMapping(value="/calculate/{companyName}/{quantity}")
-	public ResponseEntity<?> caluculate(@PathVariable String companyName, Integer quantity)
+	public ResponseEntity<?> caluculate(@PathVariable String companyName, @PathVariable Integer quantity)
 	{
-		
+		return null;
 	}
 	
 }
