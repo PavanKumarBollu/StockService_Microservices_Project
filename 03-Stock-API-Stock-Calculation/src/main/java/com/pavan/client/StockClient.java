@@ -2,11 +2,14 @@ package com.pavan.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "02-Stock-API-Stock-Service")
 public interface StockClient {
 
-	public ResponseEntity<String> getStockPrice(String company);
+	@GetMapping(value="/price/stockprice/{company}")
+	public ResponseEntity<String> getStockPrice(@PathVariable String company);
 	
 	
 }
